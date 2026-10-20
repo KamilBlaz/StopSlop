@@ -91,12 +91,12 @@ h1 em { font-style: normal; color: #c44826; }
 .steps { list-style: none; margin: 0; padding: 0; }
 .step-number { display: block; font-size: 14px; font-weight: 600; margin-bottom: 14px; color: #a93a17; }
 .about { background: #20221f; color: #f8f6f1; }
-.about-layout { display: grid; grid-template-columns: .9fr 1.2fr; align-items: center; gap: 70px; }
+.about-layout { display: grid; gap: 40px; }
 .about .eyebrow { color: #eeac8e; }
 .about h2 { margin-bottom: 22px; }
 .about-copy > p:not(.eyebrow) { max-width: 410px; color: #c3c4bc; }
 .about .text-link { margin-top: 28px; color: #f2b399; }
-.founders { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.founders { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
 .founder-card { padding: 28px 22px; background: #2a2c28; border: 1px solid #41443b; border-radius: 14px; transition: background .25s, border-color .25s; }
 .founder-card:hover { background: #30322d; border-color: #8b6958; }
 .founder-avatar { position: relative; display: grid; place-items: center; width: 96px; height: 96px; overflow: hidden; border: 1px solid #777768; border-radius: 50%; margin-bottom: 36px; background: #373a32; }
@@ -150,7 +150,7 @@ form .button { width: 100%; }
   .process-rail div > span { font-size: 11px; }
   .service-grid article { padding: 22px; }
   nav { gap: 16px; font-size: 13px; }
-  .about-layout { gap: 34px; grid-template-columns: 1fr 1.2fr; }
+  .about-layout { gap: 34px; }
   .founders { gap: 12px; }
   .founder-card { padding: 24px 18px; }
   .service-grid, .steps { gap: 28px; }
@@ -191,6 +191,12 @@ form .button { width: 100%; }
   .back-top { flex-basis: 100%; }
 }
 
+@media (max-width: 600px) {
+  .founders { grid-template-columns: 1fr; }
+  .founder-card { display: flex; align-items: center; gap: 20px; }
+  .founder-avatar { flex-shrink: 0; margin-bottom: 0; }
+}
+
 @keyframes enter {
   from { opacity: .5; transform: translateY(14px); }
   to { opacity: 1; transform: translateY(0); }
@@ -224,7 +230,7 @@ form .button { width: 100%; }
   .process-rail li:nth-child(3) svg > * { animation-delay: 1.05s; }
   .is-revealed .service-grid article, .is-revealed .founder-card { animation: card-enter .65s ease-out backwards; }
   .is-revealed .service-grid article:nth-child(2), .is-revealed .founder-card:nth-child(2) { animation-delay: .12s; }
-  .is-revealed .service-grid article:nth-child(3) { animation-delay: .24s; }
+  .is-revealed .service-grid article:nth-child(3), .is-revealed .founder-card:nth-child(3) { animation-delay: .24s; }
   .founder-card:hover .founder-avatar::after, .about:focus-within .founder-avatar::after { animation: accent-sweep .7s ease-out; }
   .section:focus-within, .section:focus-within article { animation: none; }
 }
